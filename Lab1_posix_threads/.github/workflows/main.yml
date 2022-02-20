@@ -1,0 +1,140 @@
+name: POSIX tests
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  compile_test_gcc:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: hcpp/posix-actions:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run compile_test_gcc.sh
+      run: |
+         cp -r /__e/01-posix-tests ./
+         cd 01-posix-tests
+         ./compile_test_gcc.sh
+      shell: bash
+  compile_test_clang:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: hcpp/posix-actions:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run compile_test_clang.sh
+      run: |
+         cp -r /__e/01-posix-tests ./
+         cd 01-posix-tests
+         ./compile_test_clang.sh
+      shell: bash
+  single_value:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: hcpp/posix-actions:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run single_value.sh
+      run: |
+         cp -r /__e/01-posix-tests ./
+         cd 01-posix-tests
+         ./single_value.sh
+      shell: bash
+  two_values:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: hcpp/posix-actions:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run two_values.sh
+      run: |
+         cp -r /__e/01-posix-tests ./
+         cd 01-posix-tests
+         ./two_values.sh
+      shell: bash
+  even:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: hcpp/posix-actions:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run even.sh
+      run: |
+         cp -r /__e/01-posix-tests ./
+         cd 01-posix-tests
+         ./even.sh
+      shell: bash
+  odd:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: hcpp/posix-actions:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run odd.sh
+      run: |
+         cp -r /__e/01-posix-tests ./
+         cd 01-posix-tests
+         ./odd.sh
+      shell: bash
+  empty_input:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: hcpp/posix-actions:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run empty_input.sh
+      run: |
+         cp -r /__e/01-posix-tests ./
+         cd 01-posix-tests
+         ./empty_input.sh
+      shell: bash
+  invalid_input:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: hcpp/posix-actions:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run invalid_input.sh
+      run: |
+         cp -r /__e/01-posix-tests ./
+         cd 01-posix-tests
+         ./invalid_input.sh
+      shell: bash
+  random:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: hcpp/posix-actions:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run random.sh
+      run: |
+         cp -r /__e/01-posix-tests ./
+         cd 01-posix-tests
+         ./random.sh
+      shell: bash
+  asan:
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: hcpp/posix-actions:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run asan.sh
+      run: |
+         cp -r /__e/01-posix-tests ./
+         cd 01-posix-tests
+         ./asan.sh
+      shell: bash
+  test:    
+    runs-on: self-hosted
+    timeout-minutes: 10
+    container: hcpp/posix-actions:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run test.sh
+      run: |
+         cp -r /__e/01-posix-tests ./
+         cd 01-posix-tests
+         ./test.sh
+      shell: bash

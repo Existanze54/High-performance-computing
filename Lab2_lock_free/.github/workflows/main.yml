@@ -1,0 +1,140 @@
+name: Lock-Free Set tests
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  single_thread:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    container: hcpp/lock-free:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run single_thread.sh
+      run: |
+         cp -r /__e/02-lock-free-set-tests ./
+         cd 02-lock-free-set-tests
+         ./single_thread.sh
+      shell: bash
+  simple_remove:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    container: hcpp/lock-free:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run simple_remove.sh
+      run: |
+         cp -r /__e/02-lock-free-set-tests ./
+         cd 02-lock-free-set-tests
+         ./simple_remove.sh
+      shell: bash
+  test:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    container: hcpp/lock-free:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run test.sh
+      run: |
+         cp -r /__e/02-lock-free-set-tests ./
+         cd 02-lock-free-set-tests
+         ./test.sh
+      shell: bash
+  simple_is_empty:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    container: hcpp/lock-free:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run simple_isEmpty.sh
+      run: |
+         cp -r /__e/02-lock-free-set-tests ./
+         cd 02-lock-free-set-tests
+         ./simple_isEmpty.sh
+      shell: bash
+  simple_contains:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    container: hcpp/lock-free:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run simple_contains.sh
+      run: |
+         cp -r /__e/02-lock-free-set-tests ./
+         cd 02-lock-free-set-tests
+         ./simple_contains.sh
+      shell: bash
+  simple_check_physical_remove:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    container: hcpp/lock-free:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run simple_checkPhysicalRemove.sh
+      run: |
+         cp -r /__e/02-lock-free-set-tests ./
+         cd 02-lock-free-set-tests
+         ./simple_checkPhysicalRemove.sh
+      shell: bash
+  simple_add:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    container: hcpp/lock-free:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run simple_add.sh
+      run: |
+         cp -r /__e/02-lock-free-set-tests ./
+         cd 02-lock-free-set-tests
+         ./simple_add.sh
+      shell: bash
+  lincheck_test:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    container: hcpp/lock-free:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run lincheck_test.sh
+      run: |
+         cp -r /__e/02-lock-free-set-tests ./
+         cd 02-lock-free-set-tests
+         ./lincheck_test.sh
+      shell: bash
+  lincheck_simple:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    container: hcpp/lock-free:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run lincheck_simple.sh
+      run: |
+         cp -r /__e/02-lock-free-set-tests ./
+         cd 02-lock-free-set-tests
+         ./lincheck_simple.sh
+      shell: bash
+  lincheck_run_test_1:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    container: hcpp/lock-free:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run lincheck_run_test_1.sh
+      run: |
+         cp -r /__e/02-lock-free-set-tests ./
+         cd 02-lock-free-set-tests
+         ./lincheck_run_test_1.sh
+      shell: bash
+  lincheck_run_test_2:
+    runs-on: self-hosted
+    timeout-minutes: 20
+    container: hcpp/lock-free:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run lincheck_run_test_2.sh
+      run: |
+         cp -r /__e/02-lock-free-set-tests ./
+         cd 02-lock-free-set-tests
+         ./lincheck_run_test_2.sh
+      shell: bash
